@@ -1,7 +1,7 @@
 entrypoint = "src/instawebhooks/__main__.py"
 modules = ["python-3.12"]
 onBoot = "pip install ."
-language = "python3"
+
 hidden = ["build", "assets"]
 
 [nix]
