@@ -1,0 +1,21 @@
+entrypoint = "src/instawebhooks/__main__.py"
+modules = ["python-3.12"]
+onBoot = "pip install ."
+language = "python3"
+hidden = ["build", "assets"]
+
+[nix]
+channel = "stable-24_05"
+
+[unitTest]
+language = "python3"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[run]
+args = ["sh", "-c", "instawebhooks $INSTAGRAM_USERNAME $DISCORD_WEBHOOK_URL"]
+
+[run.env]
+INSTAGRAM_USERNAME = "raenlua"
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz"
